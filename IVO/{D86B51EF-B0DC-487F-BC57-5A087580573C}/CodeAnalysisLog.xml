@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\enterprise\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="16.0">
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0055" Kind="AssemblyLoad">
+   <Type>Microsoft.FxCop.Common.AssemblyLoadException</Type>
+   <ExceptionMessage>Could not load C:\Users\Leo\AppData\Local\Temp\tmp8701.tmp.cadir\bin\App_Web_rpobztjr.dll.</ExceptionMessage>
+   <InnerType>System.IO.FileLoadException</InnerType>
+   <InnerExceptionMessage>The given assembly name or codebase was invalid. (Exception from HRESULT: 0x80131047)</InnerExceptionMessage>
+   <InnerStackTrace>   at System.Reflection.AssemblyName.nInit(RuntimeAssembly&amp; assembly, Boolean forIntrospection, Boolean raiseResolveEvent)
+   at System.Reflection.AssemblyName..ctor(String assemblyName)
+   at Phx.Metadata.LoaderImplementation.GetAssemblySymbolFromReflectionString(String assemblyString)
+   at Phx.Metadata.LoaderImplementation.GetTypeFromReflectionString(String typeName)
+   at Phx.Metadata.LoaderImplementation.DeserializePointerTypeConstant(Type type, AttributeBlobReader&amp; blobReader, Boolean doResolveEnums)
+   at Phx.Metadata.LoaderImplementation.DeserializeConstant(Type type, AttributeBlobReader&amp; blobReader, Boolean doResolveEnums)
+   at Phx.Metadata.MetadataLoader.ParseCustomAttribute(AttributeSymbol attributeSymbol, Boolean doResolveEnums)
+   at Microsoft.FxCop.Engines.Phoenix.AssemblyLoader.LoadAttributes(List`1 attributes, MetadataLoader metadataLoader)
+   at Microsoft.FxCop.Engines.Phoenix.AssemblyLoader.LoadAttributes(ProgramUnit programUnit, MetadataLoader metadataLoader)
+   at Microsoft.FxCop.Engines.Phoenix.AssemblyLoader.LoadAssembly(String filePath)
+   at Microsoft.FxCop.Engines.Phoenix.PhoenixAnalysisEngine.AnalyzeInternal()</InnerStackTrace>
+  </Exception>
+  <Exception Keyword="CA0001" Kind="Engine">
+   <Type>System.FormatException</Type>
+   <ExceptionMessage>Input string was not in a correct format.</ExceptionMessage>
+   <StackTrace>   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer&amp; number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseUInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at Microsoft.FxCop.Sdk.AssemblyReference..ctor(String assemblyStrongName)
+   at Microsoft.FxCop.Sdk.Reader.LookupType(String nameSpace, String name, String assemblyName, ModuleNode&amp; module)
+   at Microsoft.FxCop.Sdk.Reader.GetTypeFromSerializedName(String typeName, String assemblyName, Boolean expectStruct)
+   at Microsoft.FxCop.Sdk.Reader.GetTypeFromSerializedName(String serializedName, Boolean expectStruct)
+   at Microsoft.FxCop.Sdk.Reader.ParseTypeSignature(MemoryCursor sigReader, Boolean&amp; pinned, Boolean&amp; isTypeArgument)
+   at Microsoft.FxCop.Sdk.Reader.GetCustomAttributeLiteralValue(AttributeNode attribute, MemoryCursor sigReader, TypeNode&amp; type)
+   at Microsoft.FxCop.Sdk.Reader.GetCustomAttribute(Method cons, MemoryCursor sigReader, Int32 blobLength)
+   at Microsoft.FxCop.Sdk.Reader.GetCustomAttribute(Int32 i)
+   at Microsoft.FxCop.Sdk.Reader.GetCustomAttributesFor(Int32 parentIndex)
+   at Microsoft.FxCop.Sdk.Reader.AddPropertiesToType(TypeNode type, PropertyRow[] propertyDefs, PropertyPtrRow[] propertyPtrs, Int32 start, Int32 end)
+   at Microsoft.FxCop.Sdk.Reader.GetTypeMembers(TypeNode type, Object handle)
+   at Microsoft.FxCop.Sdk.TypeNode.get_Members()
+   at Microsoft.FxCop.Sdk.TypeNode.GetMembersNamed(Identifier name)
+   at Microsoft.FxCop.Sdk.Reader.GetMemberFromRef(Int32 i, TypeNodeCollection&amp; varArgTypes, Int32 numGenericArgs)
+   at Microsoft.FxCop.Sdk.Reader.GetMemberFromToken(Int32 tok, TypeNodeCollection&amp; varArgTypes)
+   at Microsoft.FxCop.Sdk.ILParser.GetMemberFromToken()
+   at Microsoft.FxCop.Sdk.InstructionParser.ParseInstruction()
+   at Microsoft.FxCop.Sdk.InstructionParser.ParseInstructions()
+   at Microsoft.FxCop.Sdk.Reader.ParseMethodInstructions(Method method, Int32 methodIndex, Int32 RVA)
+   at Microsoft.FxCop.Sdk.Reader.GetMethodInstructions(Method method, Object i)
+   at Microsoft.FxCop.Sdk.Reader.GetMethodBody(Method method, Object i, Boolean asInstructionList)
+   at Microsoft.FxCop.Sdk.Method.get_Instructions()
+   at Microsoft.FxCop.Sdk.RuleUtilities.HasImperativeSecurityAction(Method method, SecurityAction action)
+   at Microsoft.FxCop.Sdk.RuleUtilities.HasSecurityAction(Method method, SecurityAction action)
+   at Microsoft.FxCop.Sdk.RuleUtilities.HasSecurityAction(Method method, SecurityAction[] actions)
+   at Microsoft.FxCop.Engines.Introspection.LoadVisitor.RecordCallSites(Method caller)
+   at Microsoft.FxCop.Engines.Introspection.LoadVisitor.VisitMember(Member member, TargetMember target)
+   at Microsoft.FxCop.Engines.Introspection.BaseVisitor.VisitMembers(MemberCollection members, TargetMemberDictionary targets, Boolean visitNestedTypes)
+   at Microsoft.FxCop.Engines.Introspection.BaseVisitor.VisitType(TypeNode type, TargetType target)
+   at Microsoft.FxCop.Engines.Introspection.LoadVisitor.VisitType(TypeNode type, TargetType target)
+   at Microsoft.FxCop.Engines.Introspection.BaseVisitor.VisitTypes(TypeNodeCollection types, TargetNamespaceDictionary targets)
+   at Microsoft.FxCop.Engines.Introspection.LoadVisitor.VisitModule(ModuleNode module, TargetModule target)
+   at Microsoft.FxCop.Engines.Introspection.BaseVisitor.VisitAssembly(AssemblyNode assembly, TargetFile target)
+   at Microsoft.FxCop.Engines.Introspection.LoadVisitor.VisitAssembly(AssemblyNode assembly, TargetFile target)
+   at Microsoft.FxCop.Engines.Introspection.LoadVisitor.Load(TargetFile target, Boolean buildTree, Boolean queueItems, AssemblyNode loadedAssembly)
+   at Microsoft.FxCop.Engines.Introspection.LoadVisitor.LoadAssemblies(Queue queue, ExceptionCollection exceptions)</StackTrace>
+  </Exception>
+ </Exceptions>
+</FxCopReport>
